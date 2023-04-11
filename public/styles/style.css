@@ -1,0 +1,301 @@
+/* ITCSS: Settings */
+:root {
+  --bodyBackground: #FCF5D8;
+  --bodyTextColor: #390D04;
+  --topNavBackground: #BACDDB;
+  --topNavColor: #FFF8EA;
+  --cartTitleBackground: rgb(85, 85, 145);
+  --footerBackground: #5B2A3F;
+  --btnHover: #8d2511;
+  --splashTextShadow: #200;
+  --cardTextColor: #280D14;
+  --cardBackground: #FAF2C3;
+  --btn: #4E6C50;
+  --cardBorder: #86b7fe;
+  --cardHeaderBackground: #D4D600;
+  --light: rgba(13,110,253,.25);
+}
+
+/* ITCSS: Resets */
+/* ITCSS: Fonts */
+@font-face {
+  font-family: "Modak";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/modak.eot");
+  src: url("./fonts/modak.eot?#iefix") format("embedded-opentype"), url("./fonts/modak.woff") format("woff"), url("./fonts/modak.ttf") format("truetype"), url("./fonts/modak.svg#modakregular") format("svg");
+} /* ITCSS: Base */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bodyBackground);
+  color: var(--bodyTextColor);
+  font-family: "avenir next", avenir, ubuntu, roboto, noto, "segoe ui", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding-bottom: 60px;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  padding: 1rem 0 1rem;
+  font-size: 1.4rem;
+  background: gainsboro;
+}
+
+label {
+  display: block;
+  width: 30%;
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+button {
+  margin-right: 2rem;
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: #fff;
+  cursor: pointer;
+  background-color: gainsbor;
+  transition: 0.2s;
+}
+button:hover {
+  color: #fff;
+  background-color: #0d6efd;
+}
+
+.btn {
+  height: 2.4rem;
+  margin-right: 1rem;
+}
+.btn:hover {
+  background: var(--btn);
+  color: var(--bodyBackground);
+}
+
+#delete-product-btn {
+  width: 8.5rem;
+}
+#delete-product-btn:hover {
+  background-color: var(--btnHover);
+}
+
+.btn-x:hover {
+  background-color: var(--btnHover);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+  border-color: var(--cardBorder);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--light);
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-select:focus {
+  border-color: var(--cardBorder);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--light);
+}
+
+/* ITCSS: Sections */
+.align-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 12px;
+}
+
+#product_form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+/* By default these inputs are hidden */
+#weight-container,
+#dimensions-container {
+  display: none;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  margin-top: 1rem;
+}
+
+.alert li {
+  margin: 10px 0 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .col-6 {
+  max-width: 100%;
+  padding: 10px;
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+footer {
+  background: var(--footerBackground);
+  margin-top: 50px;
+  padding: 18px;
+  text-align: center;
+  color: #FFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.alert li {
+  margin: 10px 0 5px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .col-6 {
+  max-width: 100%;
+  padding: 10px;
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+/* ITCSS: Components */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 13rem;
+  min-height: 11rem;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border: 2px solid var(--cardBorder);
+  border-radius: 8px;
+  --bs-border-opacity: 1;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.card:hover {
+  border-color: var(--cardBorder);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--light);
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 15px;
+}
+
+.form-check {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.card-title {
+  text-align: center !important;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 85%;
+  margin: 1rem auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 85%;
+  margin: auto;
+}
+
+header {
+  padding: 1rem 0 1rem;
+  font-size: 1.4rem;
+  background: var(--topNavBackground);
+}
+
+/* ITCSS: Trumps */
+@media (max-width: 920px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 50%;
+    min-width: 300px;
+  }
+}
+@media (max-width: 840px) {
+  .splash h1 {
+    font-size: 16vw;
+  }
+}
+@media (max-width: 500px) {
+  .top-bar {
+    flex-direction: column;
+  }
+  .top-bar-link {
+    width: 100%;
+    border: 0px;
+    text-align: center;
+  }
+  .top-bar-link span {
+    border: 0px;
+  }
+  .top-bar-cart-link {
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
